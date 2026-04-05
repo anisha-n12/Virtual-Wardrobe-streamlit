@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MR-DEE Virtual Try-On Demo</title>
+    </head>
+<body>
+    <h1>👕 MR-DEE Virtual Try-On Demo</h1>
+    
+    <p>Upload a person's photo and a clear image of the clothing item.</p>
+
+    <form method="POST" action="/tryon" enctype="multipart/form-data">
+        
+        <div>
+            <label for="person_photo">1. Upload Photo of the Person (Model):</label><br>
+            <input type="file" id="person_photo" name="person_photo" accept="image/*" required>
+        </div>
+        
+        <div>
+            <label for="clothing_item">2. Upload Photo of the Clothing Item:</label><br>
+            <input type="file" id="clothing_item" name="clothing_item" accept="image/*" required>
+        </div>
+        
+        <input type="submit" value="Generate Try-On Image">
+    </form>
+</body>
+</html>

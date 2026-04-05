@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VirtuaDress AI - {% block title %}{% endblock %}</title>
+
+<!-- ✅ Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ✅ Import Google Fonts -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background-color: #f8fafc; 
+}
+.nav-link.active { 
+  border-bottom: 2px solid #3b82f6; 
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="{{ url_for('index') }}" class="flex-shrink-0 flex items-center">
+        <span class="text-2xl font-bold text-indigo-600">VirtuaDress</span>
+      </a>
+      <div class="flex space-x-4">
+        <a href="{{ url_for('index') }}" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium {% if request.path == '/' %}active{% endif %}">Home</a>
+        <a href="{{ url_for('wardrobe') }}" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium {% if request.path == '/wardrobe' %}active{% endif %}">Wardrobe</a>
+        <a href="{{ url_for('gradio_try_on') }}" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium {% if request.path == '/tryon' %}active{% endif %}">Virtual Try-On</a>
+        <a href="{{ url_for('about') }}" class="nav-link text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium {% if request.path == '/about' %}active{% endif %}">About Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Content Area -->
+<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<div class="bg-white p-8 rounded-xl shadow-lg">
+<h1 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-2">About VirtuaDress AI</h1>
+
+<div class="space-y-6 text-gray-700">
+    <p>
+        VirtuaDress AI was created to bridge the gap between online shopping and the physical fitting room experience. We leverage the power of cutting-edge diffusion models, particularly those based on the VTON (Virtual Try-On) framework, to provide users with realistic visualizations of clothing items on a person.
+    </p>
+    
+    <p>
+        Our backend is built on **Flask** for reliability and speed, and the complex image generation task is delegated to powerful, open-source AI models hosted on platforms like Hugging Face Spaces (via the **Gradio Client API**). This allows us to focus on user experience while providing access to state-of-the-art technology.
+    </p>
+    
+    <h2 class="text-xl font-semibold text-gray-800 pt-4">Our Mission</h2>
+    <p>
+        To empower individuals to make confident fashion decisions by providing a seamless, stable, and accessible virtual try-on experience directly from their browser.
+    </p>
+</div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Try-On Result{% endblock %}
+
+{% block content %}
+
+<div class="text-center py-10 bg-white rounded-xl shadow-lg">
+<h1 class="text-4xl font-extrabold text-gray-900 mb-6">✨ Your Generated Look</h1>
+
+<div class="max-w-md mx-auto result-container border border-gray-200 p-4 rounded-lg">
+    <!-- Displays the image using the path provided by app.py -->
+    <img src="{{ tryon_image }}" alt="Generated Try-On Image" class="w-full h-auto rounded-md shadow-xl">
+</div>
+
+<div class="mt-8 flex justify-center space-x-4">
+    <a href="{{ url_for('gradio_try_on') }}" 
+       class="px-6 py-2 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition duration-150">
+        Try Another Outfit
+    </a>
+    <a href="{{ url_for('wardrobe') }}" 
+       class="px-6 py-2 text-indigo-600 bg-gray-100 border border-gray-300 rounded-lg hover:bg-gray-200 transition duration-150">
+        Manage Wardrobe
+    </a>
+</div>
+
+
+</div>
+{% endblock %}
